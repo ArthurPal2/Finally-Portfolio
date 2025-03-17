@@ -50,6 +50,17 @@ window.onscroll = () => {
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
 
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    // Perform AJAX request or show confirmation message
+    alert('Your message has been sent! Thank you for contacting us.');
+    
+    // Optionally, reset the form after submission
+    this.reset();
+});
+
+
 
 
 
