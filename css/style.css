@@ -139,7 +139,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('/images/meow.jpg') no-repeat center center;
+    background: url('/images/itona5.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -746,6 +746,7 @@ h3 {
 .contact form .btn-box.btns .btn {
     cursor: pointer;
 }
+
 
 /* Footer Section */
 .footer {
