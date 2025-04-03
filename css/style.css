@@ -801,6 +801,52 @@ h3 {
 }
 
 
+
+  /* Style for the toast notification */
+  .toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Success toast style */
+  .toast.success {
+    background-color: #28a745;
+  }
+
+  /* Error toast style */
+  .toast.error {
+    background-color: #dc3545;
+  }
+
+  /* Optional: Animate the toast sliding from the top */
+  .toast {
+    transform: translateX(-50%) translateY(-20px);
+    animation: toastAnimation 0.5s ease-in-out forwards;
+  }
+
+  @keyframes toastAnimation {
+    0% {
+      transform: translateX(-50%) translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+      opacity: 0.9;
+    }
+  }
+
+
 /* Breakpoints */
 @media (max-width: 1200px) {
     html {

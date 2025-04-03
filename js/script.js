@@ -50,6 +50,44 @@ window.onscroll = () => {
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
 
+function submitForm(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Create a new FormData object
+    const formData = new FormData(event.target);
+
+    // Make an AJAX request to submit the form
+    fetch(event.target.action, {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json()) // Parse the JSON response from Web3Forms
+        .then(data => {
+            // Display a success toast notification
+            showToast('Thank you! Your message has been sent successfully.', 'success');
+
+            // Optionally, reset the form
+            event.target.reset();
+        })
+        .catch(error => {
+            // Display an error toast notification
+            showToast('Something went wrong. Please try again later.', 'error');
+        });
+}
+
+// Function to show the toast notification
+function showToast(message, type) {
+    const toast = document.getElementById('toast');
+    toast.innerText = message;
+    toast.className = 'toast ' + type; // Add success or error class
+
+    // Display the toast for 4 seconds and then hide it
+    toast.style.display = 'block';
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 4000);
+}
+
 
 
 
